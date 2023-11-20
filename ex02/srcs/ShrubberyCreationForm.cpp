@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 08:30:35 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/20 13:18:52 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/20 17:01:54 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void ShrubberyCreationForm::beExecuted(void) const
 {
     std::ofstream target;
 
-    target.open(this->_target.c_str(), std::ofstream::app | std::ofstream::out);
+    target.open((this->_target + "_shrubbery").c_str(), std::ofstream::app | std::ofstream::out);
     if (target.is_open()) {
         for (int i = 0; i < 5; ++i) {
             for (int j = 0; j < 5 - i - 1; ++j) {

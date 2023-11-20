@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 00:34:00 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/20 09:15:32 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/20 14:03:26 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 #include "../includes/AForm.hpp"
 
 class AForm;
-
-class Form;
 
 class Bureaucrat
 {

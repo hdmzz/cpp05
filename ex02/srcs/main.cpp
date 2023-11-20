@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 16:03:10 by mcombeau          #+#    #+#             */
-/*   Updated: 2023/11/20 08:58:31 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/20 17:00:08 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@
 
 int	main(void)
 {
-	Bureaucrat test1("jos", 1);
+	Bureaucrat test1("jos", 10);
 	ShrubberyCreationForm form("test");
-	
+	test1.signForm(form);
+	std::cout << form.getIsSigned() << std::endl;
+	form.beExecuted();
 	return (0);
 }
