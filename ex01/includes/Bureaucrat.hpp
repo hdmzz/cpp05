@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 00:34:00 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/20 05:24:45 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/20 05:58:05 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,12 @@ public:
 
 	void signForm(Form &form) const;
 
-	class GradeTooHighException : public std::exception
-	{
+	class GradeTooHighException : public std::exception {
 	public:
 		virtual const char *what() const throw();
 	};
 
-	class GradeTooLowException : public std::exception
-	{
+	class GradeTooLowException : public std::exception {
 	public:
 		virtual const char *what() const throw();
 	};

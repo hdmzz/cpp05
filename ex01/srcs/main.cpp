@@ -6,12 +6,12 @@
 /*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 16:03:10 by mcombeau          #+#    #+#             */
-/*   Updated: 2023/11/20 04:08:07 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/20 05:53:34 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "../includes/Bureaucrat.hpp"
+#include "../includes/Form.hpp"
 #include <iostream>
 
 #define RESET	"\e[0m"
@@ -58,7 +58,7 @@ int	main(void)
 	{
 		std::cout << std::endl << "---- TEST FORM ASSIGNMENT OPERATOR" << std::endl;
 		Bureaucrat	bureaucrat("Richard", 42);
-		Form form1("Form #1", Bureaucrat::lowestGrade, Bureaucrat::highestGrade);
+		Form form1("Form #1", Bureaucrat::minGrade, Bureaucrat::maxGrade);
 		Form form2("Form #2", 42, 42);
 
 		std::cout << "Two forms created:\n"
