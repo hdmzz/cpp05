@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 00:34:00 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/20 14:03:26 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/20 17:25:40 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ public:
 	void decrementGrade(int i);
 
 	void signForm(AForm &form) const;
+	void executeForm(AForm & form) const;
 
 	class GradeTooHighException : public std::exception {
 	public:

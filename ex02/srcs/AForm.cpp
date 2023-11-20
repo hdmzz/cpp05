@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 04:04:50 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/20 08:29:57 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/20 18:01:03 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ AForm::AForm(AForm const & src) : _name(src._name), _isSigned(false), _gradeToSi
 	return ;
 }
 
-AForm::AForm(std::string name, int gradeToSign, int gradeToXecute) : _name(name), _gradeToSign(gradeToSign), _gradeToXecute(gradeToXecute)
+AForm::AForm(std::string name, int gradeToSign, int gradeToXecute) : _name(name), _isSigned(false), _gradeToSign(gradeToSign), _gradeToXecute(gradeToXecute)
 {
 	std::cout << "AForm copy constructor called" << std::endl;
 	if (gradeToSign < Bureaucrat::maxGrade || gradeToXecute < Bureaucrat::maxGrade)
@@ -117,7 +117,7 @@ std::ostream & operator<<(std::ostream & os, AForm const & aform) {
 	std::cout << "AForm name : " << aform.getName() << std::endl;
 	std::cout <<  "Grade to sign : " << aform.getGradeToSign() << std::endl;
 	std::cout <<  "Grade to execute : " << aform.getGradeToXecute() << std::endl;
-	std::cout <<  "Is signed : " << aform.getIsSigned() << std::endl;
+	std::cout <<  "Is signed : " << (aform.getIsSigned() ? "yes" : "no")  << std::endl;
 	return (os);
 }
 
