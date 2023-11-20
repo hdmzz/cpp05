@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 00:35:08 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/20 05:17:17 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/20 09:14:49 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ void	Bureaucrat::decrementGrade(int i)
 	return ;
 }
 
-void	Bureaucrat::signForm(Form & form) const
+void	Bureaucrat::signForm(AForm & form) const
 {
 	try
 	{

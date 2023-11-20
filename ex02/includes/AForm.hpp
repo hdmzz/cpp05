@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 02:54:03 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/20 08:28:36 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/20 13:11:16 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ public:
 	void				execute(Bureaucrat const & executor) const ;
 
 protected:
-	virtual void beExecuted(Bureaucrat const & executor) const = 0;
+	virtual void beExecuted(void) const = 0;
 
 private:
 	const std::string	_name;

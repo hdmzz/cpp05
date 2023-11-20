@@ -6,14 +6,16 @@
 /*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 00:34:00 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/20 05:58:05 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/20 09:15:32 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 #include <iostream>
-#include "../includes/Form.hpp"
+#include "../includes/AForm.hpp"
+
+class AForm;
 
 class Form;
 
@@ -43,7 +45,7 @@ public:
 	void decrementGrade();
 	void decrementGrade(int i);
 
-	void signForm(Form &form) const;
+	void signForm(AForm &form) const;
 
 	class GradeTooHighException : public std::exception {
 	public:
