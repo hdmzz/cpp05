@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 04:04:50 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/20 06:10:17 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/29 11:48:30 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,17 @@ Form::Form(Form const & src) : _name(src._name), _isSigned(false), _gradeToSign(
 	return ;
 }
 
-Form::Form(std::string name, int gradeToSign, int gradeToXecute) : _name(name), _gradeToSign(gradeToSign), _gradeToXecute(gradeToXecute)
+Form::Form(std::string name, int gradeToSign, int gradeToXecute) : _name(name), _isSigned(false), _gradeToSign(Bureaucrat::minGrade), _gradeToXecute(Bureaucrat::minGrade)
 {
 	std::cout << "Form copy constructor called" << std::endl;
 	if (gradeToSign < Bureaucrat::maxGrade || gradeToXecute < Bureaucrat::maxGrade)
 		throw (Form::GradeTooHighException());
 	if (gradeToSign > Bureaucrat::minGrade || gradeToXecute > Bureaucrat::minGrade)
 		throw (Form::GradeTooLowException());
+	else {
+		this->_gradeToSign = gradeToSign;
+		this->_gradeToXecute = gradeToXecute;
+	}
 	return ;
 }
 

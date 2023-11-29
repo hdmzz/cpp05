@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 00:35:08 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/20 05:17:17 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/29 12:58:49 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,15 @@ Bureaucrat::Bureaucrat( void ) : _name("default"), _grade(minGrade)
 	return ;
 }
 
-Bureaucrat::Bureaucrat( std::string name, int grade ) : _name(name), _grade(grade)
+Bureaucrat::Bureaucrat( std::string name, int grade ) : _name(name), _grade(minGrade)
 {
 	std::cout << "Bureaucrat name and grade constructor called" << std::endl;
+	if (grade < maxGrade)
+		throw (Bureaucrat::GradeTooHighException());
+	if (grade > minGrade)
+		throw (Bureaucrat::GradeTooLowException());
+	else
+		this->_grade = grade;
 	return ;
 }
 

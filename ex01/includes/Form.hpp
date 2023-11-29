@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 02:54:03 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/20 06:01:08 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/29 12:51:44 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class Form
 private:
 	const std::string	_name;
 	bool				_isSigned;
-	const int			_gradeToSign;
-	const int			_gradeToXecute;
+	int const			_gradeToSign;
+	int const			_gradeToXecute;
 	static const int	_highestGrade = 1;
 	static const int	_lowestGrade = 150;
 public:
