@@ -5,58 +5,52 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/19 16:03:10 by mcombeau          #+#    #+#             */
-/*   Updated: 2023/11/20 17:19:52 by hdamitzi         ###   ########.fr       */
+/*   Created: 2023/11/29 02:08:27 by hdamitzi          #+#    #+#             */
+/*   Updated: 2023/11/29 02:08:29 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Bureaucrat.hpp"
-#include "../includes/ShrubberyCreationForm.hpp"
-#include "../includes/RobotomyRequestForm.hpp"
-#include "../includes/PresidentialPardonForm.hpp"
+
+#include "Bureaucrat.hpp"
+#include "Intern.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 #include <iostream>
 
 #define RESET	"\e[0m"
 #define RED		"\e[31m"
 
+void	testInternFormCreation(std::string formName, std::string target)
+{
+	std::cout << std::endl << "---- Creating form \"" << formName
+		<< "\" with target \"" << target << "\":" << std::endl;
+	Intern	lowlyIntern = Intern();
+	Bureaucrat bigBoss("Big Boss Barry", 1);
+	AForm *	form;
+	try
+	{
+		form = lowlyIntern.makeForm(formName, target);
+		bigBoss.signForm(*form);
+		bigBoss.executeForm(*form);
+		delete (form);
+	}
+	catch (std::exception & e)
+	{
+		std::cout << RED ": " << e.what() << RESET << std::endl;
+	}
+}
+
 int	main(void)
 {
-	Bureaucrat	lowlyBureaucrat("Lowly Larry", 142);
-	Bureaucrat	averageBureaucrat("Average Andy", 65);
-	Bureaucrat	highBureaucrat("High Harry", 6);
+	std::string const	shrubberyFormName = "shrubbery creation";
+	std::string const	robotomyFormName = "robotomy request";
+	std::string const	presidentialFormName = "presidential pardon";
 
-	std::cout << std::endl << "Three bureaucrats created:\n"
-			"\t" << lowlyBureaucrat << "\n"
-			"\t" << averageBureaucrat << "\n"
-			"\t" << highBureaucrat << std::endl << std::endl;
-	
-	ShrubberyCreationForm	shrubForm("Forest");
-	RobotomyRequestForm		robotomyForm("CEO");
-	PresidentialPardonForm	pardonForm(highBureaucrat.getName());
-
-	std::cout << std::endl << "Three forms created:\n"
-			"\t" << shrubForm << "\n"
-			"\t" << robotomyForm << "\n"
-			"\t" << pardonForm << std::endl;
-
-	std::cout << std::endl << "-- Signing and executing Shrubbery form:" << std::endl;
-	lowlyBureaucrat.signForm(shrubForm);
-	lowlyBureaucrat.executeForm(shrubForm);
-	averageBureaucrat.executeForm(shrubForm);
-
-	std::cout << std::endl << "-- Signing and executing Presidential Pardon form:" << std::endl;
-	highBureaucrat.executeForm(pardonForm);
-	highBureaucrat.signForm(pardonForm);
-	highBureaucrat.executeForm(pardonForm);
-	highBureaucrat.incrementGrade();
-	highBureaucrat.executeForm(pardonForm);
-
-	std::cout << std::endl << "-- Signing and executing Robotomy form:" << std::endl;
-	averageBureaucrat.executeForm(robotomyForm);
-	averageBureaucrat.signForm(robotomyForm);
-	averageBureaucrat.executeForm(robotomyForm);
-	highBureaucrat.executeForm(robotomyForm);
-
-	std::cout << std::endl;
+	testInternFormCreation(shrubberyFormName, "Garden");
+	testInternFormCreation(robotomyFormName, "Unsuspecting Customer");
+	testInternFormCreation(presidentialFormName, "Jesus");
+	testInternFormCreation("Bad Form Name", "Mr. X");
+	testInternFormCreation("", "");	
 	return (0);
 }
