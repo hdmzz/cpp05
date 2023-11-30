@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 13:24:52 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/20 16:53:25 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/30 13:33:54 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 # include "AForm.hpp"
 # include <stdlib.h>
 
-//exam check si ref est egal a null en declarant une autre instance initialiser a zero et comparer l'autre a check a clle la 
 class RobotomyRequestForm : public AForm
 {
 public:

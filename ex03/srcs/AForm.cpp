@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 04:04:50 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/20 18:01:03 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/30 13:09:39 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void AForm::execute(Bureaucrat const & executor) const
 {
 	if (executor.getGrade() > this->_gradeToXecute) throw(AForm::GradeTooLowException());
 	if (this->_isSigned == false) throw(AForm::NotSignedException());
-	
+	this->beExecuted();
 }
 
 /*******************************************************************************

@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 04:04:50 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/29 12:50:42 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/30 13:08:06 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
  * 					Construcor/Destructor
 *******************************************************************************/
 
-AForm::AForm(void) : _name("default"), _isSigned(false), _gradeToSign(_lowestGrade),
- _gradeToXecute(_lowestGrade)
+AForm::AForm(void) : _name("default"), _isSigned(false), _gradeToSign(_lowestGrade), _gradeToXecute(_lowestGrade)
 {
 	std::cout << "AForm constructor called" << std::endl;
 	return ;
@@ -66,11 +65,11 @@ void	AForm::beSigned(Bureaucrat const & b) {
 	return ;
 }
 
-void AForm::execute(Bureaucrat const & executor) const
+void 	AForm::execute(Bureaucrat const & executor) const
 {
 	if (executor.getGrade() > this->_gradeToXecute) throw(AForm::GradeTooLowException());
 	if (this->_isSigned == false) throw(AForm::NotSignedException());
-	
+	this->beExecuted();
 }
 
 /*******************************************************************************
@@ -85,11 +84,11 @@ bool	AForm::getIsSigned() const {
 	return (this->_isSigned);
 }
 
-int AForm::getGradeToSign() const {
+int		AForm::getGradeToSign() const {
 	return (this->_gradeToSign);
 }
 
-int AForm::getGradeToXecute() const {
+int		AForm::getGradeToXecute() const {
 	return (this->_gradeToXecute);
 }
 
