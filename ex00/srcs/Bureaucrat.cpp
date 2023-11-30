@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 00:35:08 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/29 11:25:50 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/30 12:21:06 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,5 +126,5 @@ void	Bureaucrat::decrementGrade(int i)
 std::ostream &	operator<<(std::ostream & os, Bureaucrat const & rhv)
 {
 	std::cout << rhv.getName() << ", bureaucrat grade " << rhv.getGrade() << std::endl;
-	return os;
+	return (os);
 }

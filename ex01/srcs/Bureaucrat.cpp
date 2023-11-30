@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 00:35:08 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/29 12:58:49 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/30 12:48:00 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,7 @@ void	Bureaucrat::signForm(Form & form) const
 	}
 	catch (const std::exception &e)
 	{
-		std::cerr << _name << " couldn't sign " << form.getName() << " because " << e.what() << '\n';
+		std::cerr << _name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
 	}
 }
 
